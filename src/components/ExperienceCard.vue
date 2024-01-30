@@ -7,9 +7,19 @@
     </div>
 </template>
 <script>
-export default{
-    props:{
-        experience:{type: Object, required: true,}
-    }
-}
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  props: {
+    experience: { type: Object, required: true },
+  },
+  setup(props) {
+    return {experience: props.experience};
+  },
+});
+// export default{
+//     props:{
+//         experience:{type: Object, required: true,}
+//     }
+// }
 </script>

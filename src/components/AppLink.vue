@@ -8,15 +8,16 @@
   </template>
   
   <script>
-  import {RouterLink} from 'vue-router'
+  import { computed } from 'vue';
+  import { RouterLink } from 'vue-router';
+
   export default {
-    props:{
+    props: {
       ...RouterLink.props
     },
-    computed:{
-      isExternal(){
-        return typeof this.to === 'string' && this.to.startsWith('http')
-      }
+    setup(props) {
+      const isExternal = computed(() => typeof props.to === 'string' && props.to.startsWith('http'));
+      return {isExternal};
     }
-  }
+  };
   </script>

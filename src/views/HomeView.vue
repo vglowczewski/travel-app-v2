@@ -14,12 +14,14 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import sourceData from '@/data.json'
 export default {
-  data(){
-    return {
-      destinations: sourceData.destinations
-    }
-  }
+  setup(){
+    const route = useRoute()
+    const destinations = ref(sourceData.destinations)
+    return {destinations}
+  },
 }
 </script>

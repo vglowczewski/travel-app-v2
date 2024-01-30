@@ -11,10 +11,14 @@
 
 <script>
 import TheNavigation from '@/components/TheNavigation.vue'
-export default{
-  components: {TheNavigation}
-}
+import { defineComponent } from 'vue';
+export default defineComponent(
+  {
+  components: { TheNavigation },
+  }
+);
 </script>
+
 <style lang="css">
 .fade-enter-active,
 .fade-leave-active {

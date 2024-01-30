@@ -8,17 +8,28 @@
     </div>
   </template>
   <script>
+  import { ref } from 'vue';
   export default {
-    data(){
-      return {
-        username: window.user
-      }
+    setup() {
+      const username = ref(window.user);
+      const logout = () => {
+        window.user = null;
+        this.$router.push({ name: 'home' });
+      };
+      return {username,logout,};
     },
-    methods:{
-      logout(){
-        window.user = null
-        this.$router.push({name: 'home'})
-      }
-    }
-  }
+  };
+  // export default {
+  //   data(){
+  //     return {
+  //       username: window.user
+  //     }
+  //   },
+  //   methods:{
+  //     logout(){
+  //       window.user = null
+  //       this.$router.push({name: 'home'})
+  //     }
+  //   }
+  // }
   </script>
