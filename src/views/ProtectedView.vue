@@ -9,14 +9,19 @@
   </template>
   <script>
   import { ref } from 'vue';
+  import { useRouter } from 'vue-router';
+
   export default {
     setup() {
       const username = ref(window.user);
+      const router = useRouter();
+
       const logout = () => {
         window.user = null;
-        this.$router.push({ name: 'home' });
+        router.push({ name: 'home' });
       };
-      return {username,logout,};
+
+      return {username,logout};
     },
   };
   // export default {
